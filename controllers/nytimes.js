@@ -1,8 +1,14 @@
 const axios = require('axios')
 require('dotenv').config()
 
+function changeSpaceToPlus(input) {
+    let title = input.split(' ')
+    return title.join('+')
+  }
+
 const getAllMovieReviews = (req,res) => {
-    axios.get('http://api.nytimes.com/svc/movies/v2/reviews/all.json',{
+    let title = changeSpaceToPlus(req.body.title)
+    axios.get(`http://api.nytimes.com/svc/movies/v2/reviews/all.json?query=${title}`,{
         headers: {
             'apikey': `${process.env.nytimes}`
         }
