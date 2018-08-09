@@ -12,6 +12,7 @@ const usersRouter = require('./routes/users');
 const moviesRouter = require('./routes/movie')
 const imgurRouter = require('./routes/imgur')
 const newsRouter = require('./routes/news')
+const youtubesRouter = require('./routes/youtube')
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/users', usersRouter);
 app.use('/movies', moviesRouter);
 app.use('/imgur',imgurRouter)
 app.use('/news', newsRouter)
+app.use('/youtube', youtubesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

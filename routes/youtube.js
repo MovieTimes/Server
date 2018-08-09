@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const { getAllMovieReviews } = require('../controllers/nytimes')
+const { trailer } = require('../controllers/youtube')
 const {auth} = require('../middlewares/auth')
 
-router.post('/', auth, getAllMovieReviews)
+router.post('/trailer', auth, trailer)
 
 module.exports = router
