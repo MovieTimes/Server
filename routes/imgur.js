@@ -1,6 +1,6 @@
-const imgurRouter = require('express').Router()
+const router = require('express').Router()
 const getSearchTitle = require('../controllers/imgur')
 
-router.get('/imgur', getSearchTitle)
+router.post('/', getSearchTitle)
 
-module.exports = imgurRouter
+module.exports = router
